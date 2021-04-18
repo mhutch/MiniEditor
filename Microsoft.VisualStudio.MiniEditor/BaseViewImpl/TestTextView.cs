@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.Utilities;
 
 namespace Microsoft.VisualStudio.Text.Editor.Implementation
 {
-	class TestTextView : ITextView3
+	class TestTextView : ITextView2
 	{
 		TestTextCaret _caret;
 

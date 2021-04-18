@@ -131,11 +131,14 @@ namespace Microsoft.VisualStudio.Text.Implementation
 			using (var streamReader = new EncodedStreamReader.NonStreamClosingStreamReader (stream, encoding, detectEncodingFromByteOrderMarks: false)) {
 				TextBuffer concreteBuffer = _textBuffer as TextBuffer;
 				if (concreteBuffer != null) {
-					bool hasConsistentLineEndings;
-					int longestLineLength;
-					StringRebuilder newContent = TextImageLoader.Load (streamReader, fileSize, out hasConsistentLineEndings, out longestLineLength);
+					StringRebuilder newContent = TextImageLoader.Load(
+						streamReader,
+						fileSize,
+						out var newlineState,
+						out var leadingWhitespaceState,
+						out var longestLineLength);
 
-					if (!hasConsistentLineEndings) {
+					if (!newlineState.HasConsistentLineEndings) {
 						// leave a sign that line endings are inconsistent. This is rather nasty but for now
 						// we don't want to pollute the API with this factoid.
 						concreteBuffer.Properties["InconsistentLineEndings"] = true;
