@@ -1,3 +1,4 @@
 [submodule "Microsoft.VisualStudio.MiniEditor/vs-editor-api"]
 	path = Microsoft.VisualStudio.MiniEditor/vs-editor-api
 	url = https://github.com/microsoft/vs-editor-api.git
+	branch = main

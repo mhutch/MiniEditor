@@ -337,7 +337,7 @@ namespace Microsoft.VisualStudio.UI.Text.Commanding.Implementation
                         {
                             var handler = handlerBuckets[i].Peek();
                             // Can this handler handle content type more specific than top handler in firstNonEmptyBucket?
-                            if (_factory.ContentTypeComparer.Compare(handler.Metadata.ContentTypes, currentHandler.Metadata.ContentTypes) < 0)
+                            if (_factory.ContentTypeOrderer.IsMoreSpecific(handler.Metadata.ContentTypes, currentHandler.Metadata.ContentTypes))
                             {
                                 foundBetterHandler = true;
                                 handlerBuckets[i].Pop();

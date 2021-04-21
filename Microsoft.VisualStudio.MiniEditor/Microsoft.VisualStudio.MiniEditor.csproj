@@ -33,13 +33,15 @@
     <PackageReference Include="Microsoft.VisualStudio.Language" Version="$(VSEditorNugetVersion)" />
     <PackageReference Include="Microsoft.VisualStudio.Composition" Version="16.4.11" />
     <PackageReference Include="Microsoft.VisualStudio.Threading" Version="16.7.56" />
-    <PackageReference Include="Nerdbank.GitVersioning" Version="3.3.37" PrivateAssets="all" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
+  <ItemGroup Condition="$(DisableNerdbankGitVersioningInMiniEditor) != true">
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.3.37" PrivateAssets="all" />
+  </ItemGroup>
   <ItemGroup>
-    <Compile Include="$(BaseEditorPath)..\FPF\PresentationCore\System.Windows.DataFormats.cs" />
-    <Compile Include="$(BaseEditorPath)..\FPF\PresentationCore\System.Windows.DataObject.cs" />
-    <Compile Include="$(BaseEditorPath)..\FPF\PresentationCore\System.Windows.TextDataFormat.cs" />
+    <Compile Include="$(BaseEditorPath)..\Editor\FPF\PresentationCore\System.Windows.DataFormats.cs" />
+    <Compile Include="$(BaseEditorPath)..\Editor\FPF\PresentationCore\System.Windows.DataObject.cs" />
+    <Compile Include="$(BaseEditorPath)..\Editor\FPF\PresentationCore\System.Windows.TextDataFormat.cs" />
     <Compile Include="$(BaseEditorPath)Core\Impl\ContentType\ContentTypeImpl.cs" />
     <Compile Include="$(BaseEditorPath)Core\Impl\ContentType\ContentTypeRegistryServiceImpl.cs" />
     <Compile Include="$(BaseEditorPath)Core\Impl\ContentType\IFileToContentTypeMetadata.cs" />
@@ -102,12 +104,19 @@
     <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Adornments\IXplat*.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Adornments\XPlat*.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Adornments\ToolTipService\IToolTipPresenter2.cs" />
-    <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Editor\ITextView3.cs" />
-    <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Editor\IViewSynchronizationManager.cs" />
+    <Compile Include="$(BaseEditorPath)Text\Def\TextUICocoa\Editor\IViewSynchronizationManager.cs" />
+    <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Editor\IViewScroller2.cs" />
+    <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Editor\ITextViewZoomManager.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\TextUI\EditorOptions\InternalOptions.cs" />
+    <Compile Include="$(BaseEditorPath)Text\Def\TextData\Document\IWhitespaceManagerFactory.cs" />
+    <Compile Include="$(BaseEditorPath)Text\Def\TextData\Document\IWhitespaceManager.cs" />
+    <Compile Include="$(BaseEditorPath)Text\Def\TextData\Document\NewlineState.cs" />
+    <Compile Include="$(BaseEditorPath)Text\Def\TextData\Document\LeadingWhitespaceState.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Formatting\ITextViewLineSource.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Operations\IEditorOperations4.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Utilities\IStatusBarService.cs" />
+    <Compile Include="$(BaseEditorPath)Text\Util\TextDataUtil\StableContentTypeOrderer.cs" />
+    <Compile Include="$(BaseEditorPath)Text\Util\TextDataUtil\WhitespaceExtensions.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Commanding\Commands\ToggleCompletionListFilterCommandArgs.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationAggregator\ClassifierAggregator.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationAggregator\ClassifierAggregatorService.cs" />
@@ -278,6 +287,8 @@
     <Compile Include="$(BaseEditorPath)Text\Impl\TextModel\TrackingSpan.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\TextModel\TrivialNormalizedTextChangeCollection.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\TextModel\VersionNumberPosition.cs" />
+    <Compile Include="$(BaseEditorPath)Text\Impl\TextModel\WhitespaceManager.cs" />
+    <Compile Include="$(BaseEditorPath)Text\Impl\TextModel\WhitespaceManagerFactory.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\TextSearch\TextSearchNavigator.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\TextSearch\TextSearchNavigatorFactoryService.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\TextSearch\TextSearchService.cs" />
@@ -326,6 +337,8 @@
     <Compile Include="$(BaseEditorPath)Text\Util\TextUIUtil\UIThreadOperationExecutor.cs" />
     <Compile Include="$(BaseEditorPath)Text\Util\TextUIUtil\VacuousTextViewModel.cs" />
     <Compile Include="$(BaseEditorPath)Text\Util\TextUIUtil\VacuousTextDataModel.cs" />
+    <Compile Include="$(BaseEditorPath)Text\Util\TextUIUtil\DefaultTextViewZoomManager.cs" />
+    <Compile Include="$(BaseEditorPath)Text\Util\TextUIUtil\TextViewZoomManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(BaseEditorPath)Core\Impl\ContentType\Strings.resx">
