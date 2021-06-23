@@ -104,7 +104,7 @@
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextLogic\IExperimentationServiceInternal.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextLogic\ILoggingServiceInternal.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextLogic\ITextModelOptionsSetter.cs" />
-    <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextLogic\ITextSearchNavigator2.cs" />
+    <!-- <Compile Include="$(BaseEditorPath)Text\Def\TextLogic\Find\ITextSearchNavigator3.cs" /> -->
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextLogic\ITextUndoHistory2.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextLogic\ITypingTelemetrySession.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextLogic\TelemetryEventType.cs" />
