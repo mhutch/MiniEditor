@@ -26,7 +26,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <VSEditorNugetVersion>17.0.82-g2ecf33c7f7</VSEditorNugetVersion>
+    <VSEditorNugetVersion>17.0.391-preview-g5e248c9073</VSEditorNugetVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,7 +39,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Composition" Version="16.9.20" />
-    <PackageReference Include="Microsoft.VisualStudio.Threading" Version="17.0.17-alpha" />
+    <PackageReference Include="Microsoft.VisualStudio.Threading" Version="17.0.32-alpha" />
   </ItemGroup>
 
   <ItemGroup Condition="$(DisableNerdbankGitVersioningInMiniEditor) != true">
@@ -129,6 +129,7 @@
     <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationAggregator\ClassifierTagger.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationAggregator\ClassifierTaggerProvider.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationAggregator\ProjectionWorkaround.cs" />
+    <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationType\ClassificationKey.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationType\ClassificationTypeImpl.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationType\ClassificationTypeRegistryService.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\BraceCompletion\BraceCompletionAggregator.cs" />
