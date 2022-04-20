@@ -26,7 +26,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <VSEditorNugetVersion>17.0.391-preview-g5e248c9073</VSEditorNugetVersion>
+    <VSEditorNugetVersion>17.2.3192</VSEditorNugetVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,7 +39,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Composition" Version="16.9.20" />
-    <PackageReference Include="Microsoft.VisualStudio.Threading" Version="17.0.32-alpha" />
+    <PackageReference Include="Microsoft.VisualStudio.Threading" Version="17.3.1-alpha" />
   </ItemGroup>
 
   <ItemGroup Condition="$(DisableNerdbankGitVersioningInMiniEditor) != true">
