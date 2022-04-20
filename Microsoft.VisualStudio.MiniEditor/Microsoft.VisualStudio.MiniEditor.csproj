@@ -34,11 +34,12 @@
     <PackageReference Include="Microsoft.VisualStudio.Text.Logic" Version="$(VSEditorNugetVersion)" />
     <PackageReference Include="Microsoft.VisualStudio.Text.UI" Version="$(VSEditorNugetVersion)" />
     <PackageReference Include="Microsoft.VisualStudio.Language" Version="$(VSEditorNugetVersion)" />
+    <PackageReference Include="Microsoft.VisualStudio.Language.Intellisense" Version="$(VSEditorNugetVersion)" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Composition" Version="16.9.20" />
+    <PackageReference Include="Microsoft.VisualStudio.Composition" Version="17.2.51" />
     <PackageReference Include="Microsoft.VisualStudio.Threading" Version="17.2.32" />
   </ItemGroup>
 
