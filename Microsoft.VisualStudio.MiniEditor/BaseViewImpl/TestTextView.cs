@@ -121,31 +121,17 @@ namespace Microsoft.VisualStudio.Text.Editor.Implementation
 
 		public SnapshotSpan GetTextElementSpan (SnapshotPoint position) => TextViewLines.GetTextElementSpan (position);
 
-		public bool InLayout => throw new NotImplementedException ();
+		public bool InLayout { get; set; }
 
-		public double MaxTextRightCoordinate => throw new NotImplementedException ();
+		public double MaxTextRightCoordinate { get; set; } = 1000;
 
-		public ITrackingSpan ProvisionalTextHighlight {
-			get {
-				throw new NotImplementedException ();
-			}
-			set {
-				throw new NotImplementedException ();
-			}
-		}
+		public ITrackingSpan ProvisionalTextHighlight { get; set; }
 
 		public ITextViewLineCollection TextViewLines { get; private set; }
 
 		public ITextSelection Selection { get; }
 
-		public int TabSize {
-			get {
-				throw new NotImplementedException ();
-			}
-			set {
-				throw new NotImplementedException ();
-			}
-		}
+		public int TabSize { get; set; } = 4;
 
 		public ITextViewRoleSet Roles => new TextViewRoleSet (new string[] {
 			PredefinedTextViewRoles.Analyzable,
@@ -177,10 +163,7 @@ namespace Microsoft.VisualStudio.Text.Editor.Implementation
 
 		public double LineHeight => charSize;
 
-		public double ViewportLeft {
-			get => 0.0;
-			set => throw new NotImplementedException ();
-		}
+		public double ViewportLeft { get; set; }
 
 		public double ViewportRight => ViewportLeft + ViewportWidth;
 
@@ -188,10 +171,7 @@ namespace Microsoft.VisualStudio.Text.Editor.Implementation
 
 		public double ViewportWidth => viewportSize;
 
-		public double ZoomLevel {
-			get { throw new NotImplementedException (); }
-			set { throw new NotImplementedException (); }
-		}
+		public double ZoomLevel { get; set; } = 1;
 
 		public void Close ()
 		{
@@ -207,9 +187,9 @@ namespace Microsoft.VisualStudio.Text.Editor.Implementation
 
         public IEditorOptions Options { get; }
 
-		public bool IsMouseOverViewOrAdornments => throw new NotImplementedException ();
+		public bool IsMouseOverViewOrAdornments { get; set; }
 
-		public bool HasAggregateFocus => throw new NotImplementedException ();
+		public bool HasAggregateFocus { get; set; }
 
 		public event EventHandler LostAggregateFocus {
 			add { }
@@ -221,7 +201,7 @@ namespace Microsoft.VisualStudio.Text.Editor.Implementation
 			remove { }
 		}
 
-		public void QueueSpaceReservationStackRefresh () => throw new NotImplementedException ();
+		public void QueueSpaceReservationStackRefresh() { }
 
 		public IViewSynchronizationManager SynchronizationManager { get; set; }
 		#endregion
@@ -234,13 +214,13 @@ namespace Microsoft.VisualStudio.Text.Editor.Implementation
 
 		public PropertyCollection Properties { get; } = new PropertyCollection();
 
-		public ITextViewLineSource FormattedLineSource => throw new NotImplementedException ();
+		public ITextViewLineSource FormattedLineSource { get; set; }
 
-		public bool IsKeyboardFocused => throw new NotImplementedException ();
+		public bool IsKeyboardFocused { get; set; }
 
-		public bool InOuterLayout => throw new NotImplementedException ();
+		public bool InOuterLayout { get; set; }
 
-        public IMultiSelectionBroker MultiSelectionBroker { get; }
+		public IMultiSelectionBroker MultiSelectionBroker { get; }
 
         #endregion
 

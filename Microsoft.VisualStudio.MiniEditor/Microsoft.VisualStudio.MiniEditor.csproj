@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <LangVersion>latest</LangVersion>
@@ -8,8 +9,8 @@
     <SignAssembly>true</SignAssembly>
     <PublicSign>true</PublicSign>
     <AssemblyOriginatorKeyFile>..\public.snk</AssemblyOriginatorKeyFile>
-    <VSEditorNugetVersion>16.6.255</VSEditorNugetVersion>
   </PropertyGroup>
+
   <PropertyGroup>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>Neteril.VisualStudio.MiniEditor</PackageId>
@@ -23,18 +24,25 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Microsoft Corporation</Copyright>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-  </ItemGroup>
+
+  <PropertyGroup>
+    <VSEditorNugetVersion>17.2.3192</VSEditorNugetVersion>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Text.Data" Version="$(VSEditorNugetVersion)" />
     <PackageReference Include="Microsoft.VisualStudio.Text.Logic" Version="$(VSEditorNugetVersion)" />
     <PackageReference Include="Microsoft.VisualStudio.Text.UI" Version="$(VSEditorNugetVersion)" />
     <PackageReference Include="Microsoft.VisualStudio.Language" Version="$(VSEditorNugetVersion)" />
-    <PackageReference Include="Microsoft.VisualStudio.Composition" Version="16.4.11" />
-    <PackageReference Include="Microsoft.VisualStudio.Threading" Version="16.7.56" />
+    <PackageReference Include="Microsoft.VisualStudio.Language.Intellisense" Version="$(VSEditorNugetVersion)" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Composition" Version="17.2.51" />
+    <PackageReference Include="Microsoft.VisualStudio.Threading" Version="17.2.32" />
+  </ItemGroup>
+
   <ItemGroup Condition="$(DisableNerdbankGitVersioningInMiniEditor) != true">
     <PackageReference Include="Nerdbank.GitVersioning" Version="3.3.37" PrivateAssets="all" />
   </ItemGroup>
@@ -93,7 +101,6 @@
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextLogic\IExperimentationServiceInternal.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextLogic\ILoggingServiceInternal.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextLogic\ITextModelOptionsSetter.cs" />
-    <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextLogic\ITextSearchNavigator2.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextLogic\ITextUndoHistory2.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextLogic\ITypingTelemetrySession.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextLogic\TelemetryEventType.cs" />
@@ -123,6 +130,7 @@
     <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationAggregator\ClassifierTagger.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationAggregator\ClassifierTaggerProvider.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationAggregator\ProjectionWorkaround.cs" />
+    <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationType\ClassificationKey.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationType\ClassificationTypeImpl.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationType\ClassificationTypeRegistryService.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\BraceCompletion\BraceCompletionAggregator.cs" />
