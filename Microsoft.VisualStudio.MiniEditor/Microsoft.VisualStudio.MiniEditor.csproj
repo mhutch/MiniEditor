@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFrameworks>net48;net6.0</TargetFrameworks>
     <LangVersion>latest</LangVersion>
     <DefaultItemExcludes>$(DefaultItemExcludes);vs-editor-api\**\*</DefaultItemExcludes>
     <BaseEditorPath>vs-editor-api\src\Editor\</BaseEditorPath>
@@ -30,17 +30,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Text.Data" Version="$(VSEditorNugetVersion)" />
-    <PackageReference Include="Microsoft.VisualStudio.Text.Logic" Version="$(VSEditorNugetVersion)" />
-    <PackageReference Include="Microsoft.VisualStudio.Text.UI" Version="$(VSEditorNugetVersion)" />
-    <PackageReference Include="Microsoft.VisualStudio.Language" Version="$(VSEditorNugetVersion)" />
-    <PackageReference Include="Microsoft.VisualStudio.Language.Intellisense" Version="$(VSEditorNugetVersion)" />
+    <PackageReference Include="Microsoft.VisualStudio.Text.Data" Version="$(VSEditorNugetVersion)" NoWarn="NU1701" />
+    <PackageReference Include="Microsoft.VisualStudio.Text.Logic" Version="$(VSEditorNugetVersion)" NoWarn="NU1701" />
+    <PackageReference Include="Microsoft.VisualStudio.Text.UI" Version="$(VSEditorNugetVersion)" NoWarn="NU1701" />
+    <PackageReference Include="Microsoft.VisualStudio.Language" Version="$(VSEditorNugetVersion)" NoWarn="NU1701" />
+    <PackageReference Include="Microsoft.VisualStudio.Language.Intellisense" Version="$(VSEditorNugetVersion)" NoWarn="NU1701" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Composition" Version="17.2.41" />
     <PackageReference Include="Microsoft.VisualStudio.Threading" Version="17.2.32" />
+    <PackageReference Include="System.IO.Packaging" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup Condition="$(DisableNerdbankGitVersioningInMiniEditor) != true">
