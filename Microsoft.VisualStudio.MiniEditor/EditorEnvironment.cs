@@ -81,7 +81,7 @@ namespace Microsoft.VisualStudio.MiniEditor
             // DefaultWpfViewOptions has necessary EditorOptionDefinition
             //"Microsoft.VisualStudio.Text.UI.Wpf.dll",
             // DefaultTextViewHostOptions has necessary EditorOptionDefinition
-            //"Microsoft.VisualStudio.Text.UI.dll",
+            "Microsoft.VisualStudio.Text.UI.dll",
             // DefaultOptions has necessary EditorOptionDefinition
             "Microsoft.VisualStudio.Text.Logic.dll",
             // WpfTextEditorFactoryService requires an implementation of undo.

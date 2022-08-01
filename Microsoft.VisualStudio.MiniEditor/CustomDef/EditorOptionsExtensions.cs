@@ -20,7 +20,7 @@ namespace Microsoft.VisualStudio.Text.Editor.OptionsExtensionMethods
 			if (options == null)
 				throw new ArgumentNullException (nameof (options));
 
-			return options.GetOptionValue<bool> (DefaultTextViewOptions.EnableHighlightCurrentLineId);
+			return options.GetOptionValue<bool> (DefaultWpfViewOptions.EnableHighlightCurrentLineId);
 		}
 
 		/// <summary>
@@ -33,7 +33,7 @@ namespace Microsoft.VisualStudio.Text.Editor.OptionsExtensionMethods
 			if (options == null)
 				throw new ArgumentNullException (nameof (options));
 
-			return options.GetOptionValue<bool> (DefaultTextViewOptions.EnableSimpleGraphicsId);
+			return options.GetOptionValue<bool> (DefaultWpfViewOptions.EnableSimpleGraphicsId);
 		}
 
 		/// <summary>
@@ -47,7 +47,7 @@ namespace Microsoft.VisualStudio.Text.Editor.OptionsExtensionMethods
 			if (options == null)
 				throw new ArgumentNullException (nameof (options));
 
-			return options.GetOptionValue<bool> (DefaultTextViewOptions.EnableMouseWheelZoomId);
+			return options.GetOptionValue<bool> (DefaultWpfViewOptions.EnableMouseWheelZoomId);
 		}
 
 		/// <summary>
@@ -60,7 +60,7 @@ namespace Microsoft.VisualStudio.Text.Editor.OptionsExtensionMethods
 			if (options == null)
 				throw new ArgumentNullException (nameof (options));
 
-			return options.GetOptionValue<string> (DefaultTextViewOptions.AppearanceCategory);
+			return options.GetOptionValue<string> (DefaultWpfViewOptions.AppearanceCategory);
 		}
 
 		/// <summary>
@@ -73,7 +73,7 @@ namespace Microsoft.VisualStudio.Text.Editor.OptionsExtensionMethods
 			if (options == null)
 				throw new ArgumentNullException (nameof (options));
 
-			return options.GetOptionValue<double> (DefaultTextViewOptions.ZoomLevelId);
+			return options.GetOptionValue<double> (DefaultWpfViewOptions.ZoomLevelId);
 		}
 
 		/// <summary>
@@ -85,7 +85,7 @@ namespace Microsoft.VisualStudio.Text.Editor.OptionsExtensionMethods
 			if (options == null)
 				throw new ArgumentNullException (nameof (options));
 
-			return options.GetOptionValue (DefaultTextViewOptions.MinZoomLevelId);
+			return options.GetOptionValue (DefaultWpfViewOptions.MinZoomLevelId);
 		}
 
 		/// <summary>
@@ -97,7 +97,7 @@ namespace Microsoft.VisualStudio.Text.Editor.OptionsExtensionMethods
 			if (options == null)
 				throw new ArgumentNullException (nameof (options));
 
-			return options.GetOptionValue (DefaultTextViewOptions.MaxZoomLevelId);
+			return options.GetOptionValue (DefaultWpfViewOptions.MaxZoomLevelId);
 		}
 
 		/// <summary>
@@ -113,7 +113,7 @@ namespace Microsoft.VisualStudio.Text.Editor.OptionsExtensionMethods
 				throw new ArgumentNullException (nameof (options));
 
 			options.SetOptionValue (
-				DefaultTextViewOptions.ZoomLevelId,
+				DefaultWpfViewOptions.ZoomLevelId,
 				Math.Min (options.MaxZoom (), Math.Max (options.MinZoom (), zoomLevel)));
 		}
 
@@ -128,7 +128,7 @@ namespace Microsoft.VisualStudio.Text.Editor.OptionsExtensionMethods
 				throw new ArgumentNullException (nameof (options));
 
 			options.SetOptionValue (
-				DefaultTextViewOptions.MinZoomLevelId,
+				DefaultWpfViewOptions.MinZoomLevelId,
 				minZoomLevel);
 		}
 
@@ -143,7 +143,7 @@ namespace Microsoft.VisualStudio.Text.Editor.OptionsExtensionMethods
 				throw new ArgumentNullException (nameof (options));
 
 			options.SetOptionValue (
-				DefaultTextViewOptions.MaxZoomLevelId,
+				DefaultWpfViewOptions.MaxZoomLevelId,
 				maxZoomLevel);
 		}
 
