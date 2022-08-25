@@ -9,6 +9,18 @@
     <SignAssembly>true</SignAssembly>
     <PublicSign>true</PublicSign>
     <AssemblyOriginatorKeyFile>..\public.snk</AssemblyOriginatorKeyFile>
+    <NoWarn>
+      CS0649; <!-- field not assigned - tons of these in submoduled code due to MEF -->
+      VSTHRD200; <!-- async methods should end with "async" - submoduled editor APIs do not follow this  -->
+      VSTHRD110; <!-- observe awaitable method return - submoduled editor APIs do not follow this  -->
+      VSTHRD106; <!-- invoke AsyncEventHandler delegates via "TplExtensions.InvokeAsync()" - submoduled editor APIs do not follow this -->
+      SYSLIB0001; <!-- do not use UTF7 - submoduled editor API uses it, but only to detect whether value passed to it is UTF7 -->
+      <!--
+      Type conflicts with imported type - audit this, only PresentationCore ones should be suppressed
+      We explicitly provide our own impl for !Windows and so we don't depend on clipboard etc.
+      -->
+      CS0436;
+    </NoWarn>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -47,6 +59,7 @@
   <ItemGroup Condition="$(DisableNerdbankGitVersioningInMiniEditor) != true">
     <PackageReference Include="Nerdbank.GitVersioning" Version="3.3.37" PrivateAssets="all" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="$(BaseEditorPath)..\Editor\FPF\PresentationCore\System.Windows.DataFormats.cs" />
     <Compile Include="$(BaseEditorPath)..\Editor\FPF\PresentationCore\System.Windows.DataObject.cs" />
@@ -91,7 +104,6 @@
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\Language\IWaitIndicator.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextData\ExtensionMethods.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextData\INonJoinableTaskTrackerInternal.cs" />
-    <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextData\ITextBufferFactoryService2.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextData\ITextImageFactoryService2.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextData\JoinableTaskHelper.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextData\TextBufferOperationHelpers.cs" />
@@ -109,6 +121,7 @@
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextLogic\TelemetrySeverity.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\Internal\TextUI\*.cs" />
     <Compile Remove="$(BaseEditorPath)Text\Def\Internal\TextUI\IBraceCompletionManager.cs" />
+    <Compile Remove="$(BaseEditorPath)Text\Def\Internal\TextUI\IMapEditToData.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Adornments\IXplat*.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Adornments\XPlat*.cs" />
     <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Adornments\ToolTipService\IToolTipPresenter2.cs" />
@@ -125,7 +138,6 @@
     <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Utilities\IStatusBarService.cs" />
     <Compile Include="$(BaseEditorPath)Text\Util\TextDataUtil\StableContentTypeOrderer.cs" />
     <Compile Include="$(BaseEditorPath)Text\Util\TextDataUtil\WhitespaceExtensions.cs" />
-    <Compile Include="$(BaseEditorPath)Text\Def\TextUI\Commanding\Commands\ToggleCompletionListFilterCommandArgs.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationAggregator\ClassifierAggregator.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationAggregator\ClassifierAggregatorService.cs" />
     <Compile Include="$(BaseEditorPath)Text\Impl\ClassificationAggregator\ClassifierTagger.cs" />

@@ -105,6 +105,8 @@ namespace Microsoft.VisualStudio.Text.Editor.Implementation
 
 		public event EventHandler<TextViewLayoutChangedEventArgs> LayoutChanged;
 
+		#pragma warning disable CS0067 // event never used
+
 		public event EventHandler<MouseHoverEventArgs> MouseHover;
 
 		public event EventHandler ViewportWidthChanged;
@@ -112,6 +114,8 @@ namespace Microsoft.VisualStudio.Text.Editor.Implementation
 		public event EventHandler ViewportLeftChanged;
 
 		public event EventHandler ViewportHeightChanged;
+
+		#pragma warning restore CS0067 // event never used
 
 		public ITextCaret Caret => _caret;
 
@@ -180,10 +184,15 @@ namespace Microsoft.VisualStudio.Text.Editor.Implementation
 		}
 
 		public event EventHandler Closed;
+
+		#pragma warning disable CS0067 // event never used
+
 		public event EventHandler IsKeyboardFocusedChanged;
 		public event EventHandler MaxTextRightCoordinateChanged;
 
-        public bool IsClosed { get; private set; }
+		#pragma warning restore CS0067
+
+		public bool IsClosed { get; private set; }
 
         public IEditorOptions Options { get; }
 
