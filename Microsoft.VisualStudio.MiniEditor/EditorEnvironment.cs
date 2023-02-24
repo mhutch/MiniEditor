@@ -75,15 +75,18 @@ namespace Microsoft.VisualStudio.MiniEditor
         public static readonly ImmutableArray<string> DefaultAssemblyNames = new []
         {
             // Consolidated implementation. Most exports come from here.
-            "Microsoft.VisualStudio.MiniEditor.dll",
+            //"Microsoft.VisualStudio.MiniEditor.dll",
+            typeof(EditorEnvironment).Assembly.Location,
             // Exports from this assembly. The file name must match!
             //"Microsoft.VisualStudio.Text.StandaloneEditor.dll",
             // DefaultWpfViewOptions has necessary EditorOptionDefinition
             //"Microsoft.VisualStudio.Text.UI.Wpf.dll",
             // DefaultTextViewHostOptions has necessary EditorOptionDefinition
-            "Microsoft.VisualStudio.Text.UI.dll",
+            //"Microsoft.VisualStudio.Text.UI.dll",
+            typeof(DefaultTextViewOptions).Assembly.Location,
             // DefaultOptions has necessary EditorOptionDefinition
-            "Microsoft.VisualStudio.Text.Logic.dll",
+            //"Microsoft.VisualStudio.Text.Logic.dll",
+            typeof(DefaultOptions).Assembly.Location,
             // WpfTextEditorFactoryService requires an implementation of undo.
             //"Microsoft.VisualStudio.Text.Implementation.StandaloneUndo.dll"
         }.ToImmutableArray();
