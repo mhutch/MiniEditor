@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net481;net8.0</TargetFrameworks>
+    <TargetFrameworks>net48;net8.0</TargetFrameworks>
     <LangVersion>latest</LangVersion>
     <DefaultItemExcludes>$(DefaultItemExcludes);vs-editor-api\**\*</DefaultItemExcludes>
     <BaseEditorPath>vs-editor-api\src\Editor\</BaseEditorPath>
