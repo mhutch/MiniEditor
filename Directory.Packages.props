@@ -1,0 +1,19 @@
+<Project>
+  <PropertyGroup>
+    <VSEditorNugetVersion>17.2.3194</VSEditorNugetVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.VisualStudio.Composition" Version="17.2.41" />
+    <PackageVersion Include="Microsoft.VisualStudio.Language" Version="$(VSEditorNugetVersion)" />
+    <PackageVersion Include="Microsoft.VisualStudio.Language.Intellisense" Version="$(VSEditorNugetVersion)" />
+    <PackageVersion Include="Microsoft.VisualStudio.Text.Data" Version="$(VSEditorNugetVersion)" />
+    <PackageVersion Include="Microsoft.VisualStudio.Text.Logic" Version="$(VSEditorNugetVersion)" />
+    <PackageVersion Include="Microsoft.VisualStudio.Text.UI" Version="$(VSEditorNugetVersion)" />
+    <PackageVersion Include="Microsoft.VisualStudio.Threading" Version="17.2.32" />
+    <PackageVersion Include="System.IO.Packaging" Version="6.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <GlobalPackageReference Include="Nerdbank.GitVersioning" Version="3.6.133" PrivateAssets="all" />
+    <GlobalPackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All" />
+  </ItemGroup>
+</Project>

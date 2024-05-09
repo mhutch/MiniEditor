@@ -10,6 +10,7 @@
     <PublicSign>true</PublicSign>
     <AssemblyOriginatorKeyFile>..\public.snk</AssemblyOriginatorKeyFile>
     <NoWarn>
+      $(NoWarn);
       CS0649; <!-- field not assigned - tons of these in submoduled code due to MEF -->
       VSTHRD200; <!-- async methods should end with "async" - submoduled editor APIs do not follow this  -->
       VSTHRD110; <!-- observe awaitable method return - submoduled editor APIs do not follow this  -->
@@ -37,22 +38,18 @@
     <Copyright>Microsoft Corporation</Copyright>
   </PropertyGroup>
 
-  <PropertyGroup>
-    <VSEditorNugetVersion>17.2.3194</VSEditorNugetVersion>
-  </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Text.Data" Version="$(VSEditorNugetVersion)" NoWarn="NU1701" />
-    <PackageReference Include="Microsoft.VisualStudio.Text.Logic" Version="$(VSEditorNugetVersion)" NoWarn="NU1701" />
-    <PackageReference Include="Microsoft.VisualStudio.Text.UI" Version="$(VSEditorNugetVersion)" NoWarn="NU1701" />
-    <PackageReference Include="Microsoft.VisualStudio.Language" Version="$(VSEditorNugetVersion)" NoWarn="NU1701" />
-    <PackageReference Include="Microsoft.VisualStudio.Language.Intellisense" Version="$(VSEditorNugetVersion)" NoWarn="NU1701" />
+    <PackageReference Include="Microsoft.VisualStudio.Text.Data" NoWarn="NU1701" />
+    <PackageReference Include="Microsoft.VisualStudio.Text.Logic" NoWarn="NU1701" />
+    <PackageReference Include="Microsoft.VisualStudio.Text.UI" NoWarn="NU1701" />
+    <PackageReference Include="Microsoft.VisualStudio.Language" NoWarn="NU1701" />
+    <PackageReference Include="Microsoft.VisualStudio.Language.Intellisense" NoWarn="NU1701" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Composition" Version="17.2.41" />
-    <PackageReference Include="Microsoft.VisualStudio.Threading" Version="17.2.32" />
-    <PackageReference Include="System.IO.Packaging" Version="6.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Composition" />
+    <PackageReference Include="Microsoft.VisualStudio.Threading" />
+    <PackageReference Include="System.IO.Packaging" />
   </ItemGroup>
 
   <ItemGroup>
