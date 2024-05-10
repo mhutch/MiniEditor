@@ -1,16 +1,21 @@
 <Project>
   <PropertyGroup>
-    <VSEditorNugetVersion>17.2.3194</VSEditorNugetVersion>
+    <!--
+    We cannot go higher than 17.5.
+    IConnectedSpan gained a new Disconnect() method in 17.6, which MiniEditor cannot implement as it is internal.
+    -->
+    <VSEditorNugetVersion>17.5.279</VSEditorNugetVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Microsoft.VisualStudio.Composition" Version="17.2.41" />
+    <PackageVersion Include="Microsoft.VisualStudio.Composition" Version="17.0.51" />
     <PackageVersion Include="Microsoft.VisualStudio.Language" Version="$(VSEditorNugetVersion)" />
+    <PackageVersion Include="Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime" Version="17.5.33428.366" />
     <PackageVersion Include="Microsoft.VisualStudio.Language.Intellisense" Version="$(VSEditorNugetVersion)" />
     <PackageVersion Include="Microsoft.VisualStudio.Text.Data" Version="$(VSEditorNugetVersion)" />
     <PackageVersion Include="Microsoft.VisualStudio.Text.Logic" Version="$(VSEditorNugetVersion)" />
     <PackageVersion Include="Microsoft.VisualStudio.Text.UI" Version="$(VSEditorNugetVersion)" />
-    <PackageVersion Include="Microsoft.VisualStudio.Threading" Version="17.2.32" />
-    <PackageVersion Include="System.IO.Packaging" Version="6.0.0" />
+    <PackageVersion Include="Microsoft.VisualStudio.Threading" Version="17.5.22" />
+    <PackageVersion Include="System.IO.Packaging" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>
     <GlobalPackageReference Include="Nerdbank.GitVersioning" Version="3.6.133" PrivateAssets="all" />

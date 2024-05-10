@@ -20,8 +20,12 @@
       We explicitly provide our own impl for !Windows and so we don't depend on clipboard etc.
       -->
       CS0436;
-      SYSLIB0051;<!-- obsolete formatter-based serialization - submoduled editor APIs do not follow this  -->
-      CS0672<!-- calls obsolete base - submoduled editor APIs do not follow this -->
+      <!-- obsolete formatter-based serialization - submoduled editor APIs do not follow this  -->
+      SYSLIB0051;
+      <!-- calls obsolete base - submoduled editor APIs do not follow this -->
+      CS0672;
+      <!-- Using obsolete API - submoduled editor code is old and has not been updated to use newer APIs -->
+      CS0618
     </NoWarn>
   </PropertyGroup>
 
@@ -45,6 +49,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Text.UI" NoWarn="NU1701" />
     <PackageReference Include="Microsoft.VisualStudio.Language" NoWarn="NU1701" />
     <PackageReference Include="Microsoft.VisualStudio.Language.Intellisense" NoWarn="NU1701" />
+    <PackageReference Include="Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime" />
   </ItemGroup>
 
   <ItemGroup>
